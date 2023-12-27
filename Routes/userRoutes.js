@@ -4,4 +4,5 @@ const router=express.Router()
 
 router.get('/show',userController.getrec)
 router.post('/reg',userController.registeruser)
+router.post('/login',userController.authuser)
 module.exports=router
