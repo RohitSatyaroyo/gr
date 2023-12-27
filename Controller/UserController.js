@@ -1,4 +1,5 @@
 const userModel=require('../MODELS/register')
+const messageModel=require('../MODELS/message')
 const getrec=async(req,res)=>{
     const ds=await userModel.find()
     res.json(ds)
