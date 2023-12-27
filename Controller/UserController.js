@@ -33,7 +33,18 @@ const getAllUser=async(req,res)=>{
     res.json(user)
 
 }
+const sendmsg=async(req,res)=>{
+
+    const {message,from,to}=req.body
+    const data=await messageModel.create({
+        message:message,users:[from,to],Sender:from
+    })
+    // console.log(data)
+    res.json({message:'s'})
+  
+  
+}
 
 
-module.exports={getrec,registeruser,authuser,getAllUser}
+module.exports={getrec,registeruser,authuser,getAllUser,sendmsg}
     
