@@ -28,7 +28,13 @@ io.on("connection",(socket)=>{
     })
 })
 
+const userRouter=require('./Routes/userRoutes')
 
+
+
+
+
+app.use('/api/auth',userRouter)
 
 
 
