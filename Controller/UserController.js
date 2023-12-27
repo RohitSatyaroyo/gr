@@ -44,7 +44,27 @@ const sendmsg=async(req,res)=>{
   
   
 }
+const getmsg=async(req,res)=>{
+   
+    const{from,to}=req.body
+    const message=await messageModel.find({
+        users:{
+            $all:[from,to]
+        }
+    }).sort({updatedAt:1})
+
+    const promessage=message.map((m)=>{
+        return{
+             fromSelf:m.Sender.toString()===from,
+             message:m.message
+        }
+    })
+    res.json(promessage)
+  
+
+}
 
 
-module.exports={getrec,registeruser,authuser,getAllUser,sendmsg}
+
+module.exports={getrec,registeruser,authuser,getAllUser,sendmsg,getmsg}
     
