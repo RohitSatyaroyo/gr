@@ -68,7 +68,12 @@ app.get('/',(req,res)=>{
 
 
 
-app.listen(8080,()=>console.log('running'))
+
+mongoose.set("strictQuery",false)
+mongoose.connect('mongodb+srv://admin:12345@royoapi.3qmdrjq.mongodb.net/?retryWrites=true&w=majority').then(()=>{
+    console.log('database connected')
+  server.listen(8080,()=>console.log('running'))
+})
 
 
 
