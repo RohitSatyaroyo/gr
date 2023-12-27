@@ -20,6 +20,13 @@ const io=new Server(server,{
      
   },
 })
+io.on("connection",(socket)=>{
+    socket.on('msges',(data)=>{
+        const {to,message}=data
+        console.log(to,message)
+        io.emit(to,message)
+    })
+})
 
 
 
