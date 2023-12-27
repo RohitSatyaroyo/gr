@@ -8,4 +8,5 @@ router.post('/login',userController.authuser)
 router.get('/getAllUser/:id',userController.getAllUser)
 
 router.post('/sendmsg',userController.sendmsg)
+router.post('/getmsg',userController.getmsg)
 module.exports=router
