@@ -77,6 +77,7 @@ app.use('/api/auth',userRouter)
 mongoose.set("strictQuery",false)
 mongoose.connect('mongodb+srv://admin:12345@royoapi.3qmdrjq.mongodb.net/?retryWrites=true&w=majority').then(()=>{
     console.log('database connected')
+  app.listen(8083,()=>console.log('running'))
  
 })
 
