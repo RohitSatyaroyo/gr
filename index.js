@@ -59,9 +59,7 @@ app.use('/api/auth',userRouter)
 
 
 
-app.get('/',(req,res)=>{
 
-  res.json('hi')})
 
 
 
