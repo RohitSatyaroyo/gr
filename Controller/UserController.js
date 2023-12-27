@@ -26,7 +26,14 @@ const authuser=async(req,res)=>{
         res.json({message:'f'})
     }
 }
+const getAllUser=async(req,res)=>{
+    const user=await userModel.find({_id:{$ne:req.params.id}}).select([
+        "email", "name"
+    ])
+    res.json(user)
+
+}
 
 
-module.exports={getrec,registeruser,authuser}
+module.exports={getrec,registeruser,authuser,getAllUser}
     
