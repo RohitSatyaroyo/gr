@@ -11,7 +11,22 @@ const registeruser=async(req,res)=>{
     res.json(user)
 
 }
+const authuser=async(req,res)=>{
+    
+    const user=await userModel.findOne(req.body)
+    if(user){
+       
+      
+        res.json({message:'s',userdetails:user})
+        console.log(user)
+      
+        
+    }
+    else{
+        res.json({message:'f'})
+    }
+}
 
 
-module.exports={getrec,registeruser}
+module.exports={getrec,registeruser,authuser}
     
