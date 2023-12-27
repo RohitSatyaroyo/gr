@@ -15,7 +15,7 @@ const {Server}=require('socket.io')
 const server=http.createServer(app)
 const io=new Server(server,{
   cors:{
-     origin:["https://cha-fro.vercel.app/"],
+     origin:["https://cha-fro.vercel.app"],
      methods:["GET","POST"]
   
      
