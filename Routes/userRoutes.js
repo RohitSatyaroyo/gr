@@ -6,4 +6,6 @@ router.get('/show',userController.getrec)
 router.post('/reg',userController.registeruser)
 router.post('/login',userController.authuser)
 router.get('/getAllUser/:id',userController.getAllUser)
+
+router.post('/sendmsg',userController.sendmsg)
 module.exports=router
